@@ -101,37 +101,43 @@ class HomePageState extends State<HomePage> {
       Utils.getImgPath(entity.icon),
       color: Colors.green,
     );
+    Widget title = Text(
+      entity.name,
+      style: TextStyle(
+          fontWeight: FontWeight.bold,
+          fontSize: 18,
+          color: Colors.black),
+    );
+
     return Card(
         elevation: 15, //设置阴影
         child: Container(
           margin: EdgeInsets.all(10),
           child: Stack(
+            alignment: Alignment.bottomRight,
             children: <Widget>[
-              Column(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: <Widget>[
-                  Text(
-                    entity.name,
-                    style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 16,
-                        color: Colors.black),
-                  ),
-                  new SizedBox(
-                    width: 60.0,
-                    height: 60.0,
-                    child: avatar,
-                  ),
-                ],
+              Positioned(
+                top: 0,
+                left: 10,
+                child: title,
               ),
               Positioned(
+                left: 0,
                 bottom: 0,
-                right: 0,
                 child: SizedBox(
-                  width: 40.0,
-                  height: 40.0,
+                  width: 60,
+                  height: 60,
                   child: avatar,
-                ),
+                )
+              ),
+              Positioned(
+                  right: 0,
+                  bottom: 0,
+                  child: SizedBox(
+                    width: 40,
+                    height: 40,
+                    child: avatar,
+                  )
               )
             ],
           ),
@@ -139,52 +145,8 @@ class HomePageState extends State<HomePage> {
   }
 }
 
-//Widget _buildDevice(DeviceEntity entity) {
-//  Widget avatar = new SvgPicture.asset(
-//    Utils.getImgPath(entity.icon),
-//    color: Colors.green,
-//  );
-//  return Card(
-//      elevation: 15, //设置阴影
-//      child: Container(
-//        margin: EdgeInsets.all(0),
-//        child: Row(
-//          mainAxisAlignment: MainAxisAlignment.spaceAround,
-//          crossAxisAlignment: CrossAxisAlignment.end,
-//          children: <Widget>[
-//            Column(
-//              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-//              children: <Widget>[
-//                Text(
-//                  entity.name,
-//                  style: TextStyle(
-//                      fontWeight: FontWeight.bold,
-//                      fontSize: 16,
-//                      color: Colors.black),
-//                ),
-//                new SizedBox(
-//                  width: 60.0,
-//                  height: 60.0,
-//                  child: avatar,
-//                ),
-//              ],
-//            ),
-//            new SizedBox(
-//              width: 40.0,
-//              height: 40.0,
-//              child: avatar,
-//            ),
-//          ],
-//        ),
-//      ));
-//}
-
-//Card(
-//elevation: 15, //设置阴影
-//child: Container(
-//margin: EdgeInsets.all(10),
-//child: Column(
-//crossAxisAlignment: CrossAxisAlignment.start,
+//Column(
+//mainAxisAlignment: MainAxisAlignment.spaceBetween,
 //children: <Widget>[
 //Text(
 //entity.name,
@@ -193,20 +155,19 @@ class HomePageState extends State<HomePage> {
 //fontSize: 16,
 //color: Colors.black),
 //),
-//Row(
-//mainAxisAlignment: MainAxisAlignment.spaceAround,
-//children: <Widget>[
 //new SizedBox(
+//width: 60.0,
+//height: 60.0,
+//child: avatar,
+//),
+//],
+//),
+//Positioned(
+//bottom: 0,
+//right: 0,
+//child: SizedBox(
 //width: 40.0,
 //height: 40.0,
 //child: avatar,
 //),
-//Image.asset(
-//Utils.getImgPath(entity.icon),
-//color: Colors.grey,
-//),
-//],
 //)
-//],
-//),
-//));

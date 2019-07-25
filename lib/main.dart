@@ -35,6 +35,7 @@ class MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowMaterialGrid: true,
       title: 'Flutter Demo',
       theme: ThemeData(
         // This is the theme of your application.
